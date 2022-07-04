@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run sass",
+      "type": "shell",
+      "command": "sass sass/app.scss css/app.css --watch"
+    }
+  ]
+}

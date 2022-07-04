@@ -1,0 +1,56 @@
+@mixin absoluteCenter($direction: "top") {
+  position: absolute;
+
+  @if $direction == "both" {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $direction == "top" {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  @if $direction == "left" {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @if $direction == "right" {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flexBox(
+  $align: flex-start,
+  $justifyContent: flex-start,
+  $flexDirection: row,
+  $wrap: nowrap
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justifyContent;
+  flex-direction: $flexDirection;
+  flex-wrap: $wrap;
+}
+
+@mixin maxWidth($q) {
+  @media screen and (max-width: $q) {
+    @content;
+  }
+}
+@mixin minWidth($q) {
+  @media screen and (min-width: $q) {
+    @content;
+  }
+}
